@@ -1,0 +1,45 @@
+{
+  "name": "play-relax-visualized",
+  "_title": "",
+  "version": "1.0.0",
+  "description": "Interactive visualization of how Relax's diffing engine works.",
+  "scripts": {
+    "test-server": "mocha-webpack --colors --watch --webpack-config webpack.dev.js --recursive './test/**/*.test.js' || true",
+    "test": "mocha-webpack --colors --webpack-config webpack.dev.js --recursive './test/**/*.test.js'",
+    "build": "webpack --config webpack.prod.js --display-modules",
+    "start": "npm run build && http-server ./dist -a localhost -p 3030 --gzip",
+    "dev-server": "webpack-dev-server --config webpack.dev.js --inline --hot --compress --progress"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "atlassubbed <atlassubbed@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "clean-webpack-plugin": "^0.1.19",
+    "compression-webpack-plugin": "^1.1.11",
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
+    "mini-css-extract-plugin": "^0.4.0",
+    "mocha": "^5.2.0",
+    "mocha-webpack": "^2.0.0-beta.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.2"
+  },
+  "engines": {
+    "node": "^10.1.0",
+    "npm": "^6.0.1"
+  }
+}
