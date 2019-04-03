@@ -18,7 +18,6 @@ const config = {
     new CleanWebpackPlugin(["dist"]),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      title: _title,
       minify: {
         collapseWhitespace: true
       }
@@ -30,6 +29,21 @@ const config = {
         test: /\.js$/,
         use: {
           loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.(png|svg|jpe?g|gif)$/,
+        use: [
+          "file-loader"
+        ]
+      },
+      {
+        test: /\.(html)/,
+        use: {
+          loader: "html-loader",
+          options: {
+            attrs: ["img:src", "link:href"]
+          }
         }
       }
     ]
